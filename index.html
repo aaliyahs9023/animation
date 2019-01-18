@@ -1,42 +1,99 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>title</title>
-  <style type="text/css">
-   header{
-         border: 10px solid transparent;
-         width:300px;
-         height:100px;
-  padding: 10px;
-  border-image: url(sunny.jpeg) 30 round;
-  text-align:center;
-  text-shadow:2px 2px 5px gold;
-  margin-left:200;
-  color:white;
-   }
-   
-   body {
-   background-color:lightblue  ;
-  background-repeat: no-repeat;
-  background-size:fixed;
-}
-#sun:hover{
-   transform:rotate(360deg); 
-}
-  </style>
-  </head>
-  <body>  
-  
-  <header>
-      <h1>Utopia</h1>
-  </header>
-  <!--*/the sun image in the corner-->
-  <div id="sun">
- <img  src="Sun-1.png" width="200" height="200">
- </div>
- 
- 
- <img id=turtle src="tortoise.jpg" width="100" height="74">
-  </body>
+    <style type="text/css">
+        header {
+            border: solid 10px;
+            border-image: linear-gradient(to left, gold, green);
+            border-image-slice: 1;
+            /*how far the border will stretch*/
+            width: 1780px;
+            height: 890px;
+            /*the space between the sides and the border*/
+            padding: 10px;
+            border-image: url(sunny.jpeg) 30 round;
+            text-align: center;
+            /*adds a shadow effect to the header*/
+            text-shadow: 2px 2px 5px gold;
+            margin-left: 50px;
+            /*this is the text color*/
+            color: black;
+            /*this is code for the background image*/
+            background-image: linear-gradient(to top right, gold, lightgreen);
+            background-repeat: no-repeat;
+            /*the background will cover the screen completely*/
+            background-size: cover;
+            font-size: 50px
+        }
+
+        .image2 {
+            /*    controls how the tortoise will move*/
+            animation: header 5s ease-in-out infinite;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        /*makes the tortoise move from left to right*/
+
+        @keyframes image2 {
+            0% {
+                left: 0%;
+            }
+            10% {
+                left: 50%;
+            }
+            100% {
+                left: 10%;
+            }
+        }
+
+        /*this controls where the sun will go*/
+
+        .image {
+            content: url(Sun-1.png);
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 50px;
+            right: 100px;
+        }
+
+        .image:hover {
+            transform: translate(50px, 100px);
+        }
+
+        /*tortoise*/
+
+        .image2 {
+            content: url(tortoise.jpg);
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 600px;
+            left: 1600px;
+            animation-name: image2;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  The utopia text
+-->
+    <header>
+        <h1>Utopia</h1>
+    </header>
+    <!--*/the div for the sun image in the corner-->
+    <div class="image"></div>​
+    <!--tortoise-->
+    <div class="image2"></div>​
+
+
+
+
+</body>
+
 </html>
